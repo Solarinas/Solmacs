@@ -252,5 +252,8 @@ There are two things you can do about this warning:
 ;; Fuzzy Finder
 (global-set-key (kbd "M-p") 'fzf)
 
+;; File Browser
+(global-set-key (kbd "C-c C-f") `treemacs)
+
 ;; Git shortcuts
 (global-set-key (kbd "C-x g") 'magit-status)
