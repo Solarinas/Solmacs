@@ -1,0 +1,7 @@
+# Ignore these files
+tramp
+nov-place
+smex-items
+.lsp-session-v1
+TAGS
+ido.last
