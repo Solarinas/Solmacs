@@ -28,7 +28,7 @@
      ("\\?\\?\\?+" . "#F6D1AD"))))
  '(package-selected-packages
    (quote
-    (powerline-evil powerline emojify org-bullets doom-modeline org-evil scheme-complete ewal-spacemacs-theme ewal-spacemacs-themes ewal-evil-cursors ewal doom-themes flycheck elpy ctags-update popup-imenu imenu-anywhere projectile imenus lsp-ui evil-magit magit dap-mode yasnippet lsp-treemacs treemacs-evil treemacs ido-vertical-mode ido-completing-read+ helm popup async company-quickhelp ## all-the-icons company-box company-lsp company lsp-python fzf minimap sublimity smex evil-collection lsp-mode evil xresources-theme)))
+    (lsp-sh powerline-evil powerline emojify org-bullets doom-modeline org-evil scheme-complete ewal-spacemacs-theme ewal-spacemacs-themes ewal-evil-cursors ewal doom-themes flycheck elpy ctags-update popup-imenu imenu-anywhere projectile imenus lsp-ui evil-magit magit dap-mode yasnippet lsp-treemacs treemacs-evil treemacs ido-vertical-mode ido-completing-read+ helm popup async company-quickhelp ## all-the-icons company-box company-lsp company lsp-python fzf minimap sublimity smex evil-collection lsp-mode evil xresources-theme)))
  '(pdf-view-midnight-colors (quote ("#f6f2e2" . "#121319"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -118,6 +118,7 @@ There are two things you can do about this warning:
 (helm-autoresize-mode 1)
 
 (helm-mode 1)
+
 ;; Enable evil mode
 (setq evil-want-keybinding nil)
 (require 'evil)
@@ -125,13 +126,6 @@ There are two things you can do about this warning:
   (evil-collection-init))
 (evil-mode 1)
 (evil-collection-init)
-
-;; Company mode
-;;(add-hook 'after-init-hook 'global-company-mode)
-;;(setq company-minimum-prefix-length 2)
-;;(company-quickhelp-mode)
-;;(require 'company-box)
-;;(add-hook 'company-mode-hook 'company-box-mode)
 
 (use-package company
   :config
@@ -244,8 +238,6 @@ There are two things you can do about this warning:
 ;; Org-mode Setup
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-
-
 
 ;; Custom key bindings
 
