@@ -1,0 +1,2 @@
+# Solmacs
+My emacs configuration
