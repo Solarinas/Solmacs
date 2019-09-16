@@ -5,10 +5,12 @@ smex-items
 .lsp-session-v1
 TAGS
 ido.last
-ido.last~
 
 # Ignore these directories
 eshell/
 .cache/
 transient/
 auto-save-list/
+
+# Ignore temporary files emacs makes
+*~
