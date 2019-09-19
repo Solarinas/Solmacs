@@ -28,7 +28,7 @@
      ("\\?\\?\\?+" . "#F6D1AD"))))
  '(package-selected-packages
    (quote
-    (lsp-sh powerline-evil powerline emojify org-bullets doom-modeline org-evil scheme-complete ewal-spacemacs-theme ewal-spacemacs-themes ewal-evil-cursors ewal doom-themes flycheck elpy ctags-update popup-imenu imenu-anywhere projectile imenus lsp-ui evil-magit magit dap-mode yasnippet lsp-treemacs treemacs-evil treemacs ido-vertical-mode ido-completing-read+ helm popup async company-quickhelp ## all-the-icons company-box company-lsp company lsp-python fzf minimap sublimity smex evil-collection lsp-mode evil xresources-theme)))
+    (auto-complete luarocks flymake-lua company-lua use-package picolisp-mode evil-nerd-commenter lua-mode lsp-sh powerline-evil powerline emojify org-bullets doom-modeline org-evil scheme-complete ewal-spacemacs-theme ewal-spacemacs-themes ewal-evil-cursors ewal doom-themes flycheck elpy ctags-update popup-imenu imenu-anywhere projectile imenus lsp-ui evil-magit magit dap-mode yasnippet lsp-treemacs treemacs-evil treemacs ido-vertical-mode ido-completing-read+ helm popup async company-quickhelp ## all-the-icons company-box company-lsp company lsp-python fzf minimap sublimity smex evil-collection lsp-mode evil xresources-theme)))
  '(pdf-view-midnight-colors (quote ("#f6f2e2" . "#121319"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -127,6 +127,7 @@ There are two things you can do about this warning:
 (evil-mode 1)
 (evil-collection-init)
 
+;; Company Mode
 (use-package company
   :config
   (setq company-idle-delay 0.3)
@@ -165,6 +166,7 @@ There are two things you can do about this warning:
 
 (use-package lsp-ui
   :requires lsp-mode flycheck
+  
   :config
 
   (setq lsp-ui-doc-enable t
@@ -172,14 +174,19 @@ There are two things you can do about this warning:
         lsp-ui-doc-position 'top
         lsp-ui-doc-include-signature t
         lsp-ui-sideline-enable nil
-       ;; lsp-ui-flycheck-enable t
-       ;; lsp-ui-flycheck-list-position 'right
-       ;; lsp-ui-flycheck-live-reporting t
+        lsp-ui-flycheck-enable t
+        lsp-ui-flycheck-list-position 'right
+        lsp-ui-flycheck-live-reporting t
         lsp-ui-peek-enable t
         lsp-ui-peek-list-width 60
         lsp-ui-peek-peek-height 25)
 
   (add-hook 'lsp-mode-hook 'lsp-ui-mode))
+
+;; Lua Support
+(add-to-list 'load-path "~/.emacs.d/lisp/lua-eldoc-mode/")
+(require 'lua-eldoc-mode)
+(add-hook 'lua-mode-hook 'lua-eldoc-mode)
 
 ;; Sublime mode
 (require 'sublimity)
@@ -194,7 +201,7 @@ There are two things you can do about this warning:
 
 ;; Set theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'xresources)
+;; (load-theme 'xresources)
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
