@@ -28,7 +28,7 @@
      ("\\?\\?\\?+" . "#F6D1AD"))))
  '(package-selected-packages
    (quote
-    (auto-complete luarocks flymake-lua company-lua use-package picolisp-mode evil-nerd-commenter lua-mode lsp-sh powerline-evil powerline emojify org-bullets doom-modeline org-evil scheme-complete ewal-spacemacs-theme ewal-spacemacs-themes ewal-evil-cursors ewal doom-themes flycheck elpy ctags-update popup-imenu imenu-anywhere projectile imenus lsp-ui evil-magit magit dap-mode yasnippet lsp-treemacs treemacs-evil treemacs ido-vertical-mode ido-completing-read+ helm popup async company-quickhelp ## all-the-icons company-box company-lsp company lsp-python fzf minimap sublimity smex evil-collection lsp-mode evil xresources-theme)))
+    (elcord helm-dash auto-complete luarocks flymake-lua company-lua use-package picolisp-mode evil-nerd-commenter lua-mode lsp-sh powerline-evil powerline emojify org-bullets doom-modeline org-evil scheme-complete ewal-spacemacs-theme ewal-spacemacs-themes ewal-evil-cursors ewal doom-themes flycheck elpy ctags-update popup-imenu imenu-anywhere projectile imenus lsp-ui evil-magit magit dap-mode yasnippet lsp-treemacs treemacs-evil treemacs ido-vertical-mode ido-completing-read+ helm popup async company-quickhelp ## all-the-icons company-box company-lsp company lsp-python fzf minimap sublimity smex evil-collection lsp-mode evil xresources-theme)))
  '(pdf-view-midnight-colors (quote ("#f6f2e2" . "#121319"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -198,6 +198,9 @@ There are two things you can do about this warning:
 ;; TRAMP
 (setq tramp-default-method "ssh")
 
+;; Discord Rich Presence (Let the NSA know what I'm editing)
+(require 'elcord)
+(elcord-mode)
 
 ;; Set theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
