@@ -243,8 +243,8 @@ There are two things you can do about this warning:
       :hook (after-init . doom-modeline-mode))
 
 ;; Font settings
-(add-to-list 'default-frame-alist '(font . "Inconsolata Bold 15" ))
-(set-face-attribute 'default t :font "Inconsolata Bold 15" )
+(add-to-list 'default-frame-alist '(font . "Inconsolata Bold 13" ))
+(set-face-attribute 'default t :font "Inconsolata Bold 13" )
 
 
 ;; Org-mode Setup
@@ -261,3 +261,4 @@ There are two things you can do about this warning:
 
 ;; Git shortcuts
 (global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-X C-g") 'magit-commit)
