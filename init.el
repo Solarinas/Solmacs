@@ -210,10 +210,6 @@ There are two things you can do about this warning:
 ;; TRAMP
 (setq tramp-default-method "ssh")
 
-;; Discord Rich Presence (Let the NSA know what I'm editing)
-(require 'elcord)
-(elcord-mode)
-
 ;; Set theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 ;; (load-theme 'xresources)
