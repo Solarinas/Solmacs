@@ -28,7 +28,7 @@
      ("\\?\\?\\?+" . "#F6D1AD"))))
  '(package-selected-packages
    (quote
-    (elcord helm-dash auto-complete luarocks flymake-lua company-lua use-package picolisp-mode evil-nerd-commenter lua-mode lsp-sh powerline-evil powerline emojify org-bullets doom-modeline org-evil scheme-complete ewal-spacemacs-theme ewal-spacemacs-themes ewal-evil-cursors ewal doom-themes flycheck elpy ctags-update popup-imenu imenu-anywhere projectile imenus lsp-ui evil-magit magit dap-mode yasnippet lsp-treemacs treemacs-evil treemacs ido-vertical-mode ido-completing-read+ helm popup async company-quickhelp ## all-the-icons company-box company-lsp company lsp-python fzf minimap sublimity smex evil-collection lsp-mode evil xresources-theme)))
+    (which-key magit-keys quelpa-use-package elcord helm-dash auto-complete luarocks flymake-lua company-lua use-package picolisp-mode evil-nerd-commenter lua-mode lsp-sh powerline-evil powerline emojify org-bullets doom-modeline org-evil scheme-complete ewal-spacemacs-theme ewal-spacemacs-themes ewal-evil-cursors ewal doom-themes flycheck elpy ctags-update popup-imenu imenu-anywhere projectile imenus lsp-ui evil-magit magit dap-mode yasnippet lsp-treemacs treemacs-evil treemacs ido-vertical-mode ido-completing-read+ helm popup async company-quickhelp ## all-the-icons company-box company-lsp company lsp-python fzf minimap sublimity smex evil-collection lsp-mode evil xresources-theme)))
  '(pdf-view-midnight-colors (quote ("#f6f2e2" . "#121319"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -56,6 +56,13 @@ There are two things you can do about this warning:
     ;; For important compatibility libraries like cl-lib
     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
+
+;; Quelpa packages
+(quelpa
+ '(quelpa-use-package
+   :fetcher git
+   :url "https://framagit.org/steckerhalter/quelpa-use-package.git"))
+(require 'quelpa-use-package)
 
 ;; ido-mode
 (ido-mode 1)
@@ -118,6 +125,11 @@ There are two things you can do about this warning:
 (helm-autoresize-mode 1)
 
 (helm-mode 1)
+
+;; Enable Which key
+(add-to-list 'load-path "path/to/which-key.el")
+(require 'which-key)
+(which-key-mode)
 
 ;; Enable evil mode
 (setq evil-want-keybinding nil)
@@ -261,4 +273,18 @@ There are two things you can do about this warning:
 
 ;; Git shortcuts
 (global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-X C-g") 'magit-commit)
+(global-set-key (kbd "C-x C-g") 'magit-commit)
+
+(quelpa
+ '(quelpa-use-package
+   :fetcher git
+   :url "https://framagit.org/steckerhalter/quelpa-use-package.git"))
+(require 'quelpa-use-package)
+
+(use-package magit-keys
+  :ensure nil
+  :quelpa
+  (magit-keys :repo "a13/magit-keys.el" :fetcher github :version original)
+  :config
+  (magit-keys-mode t))
+
