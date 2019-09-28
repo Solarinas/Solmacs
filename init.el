@@ -276,12 +276,9 @@ There are two things you can do about this warning:
 (global-set-key (kbd "M-p") 'fzf)
 
 ;; File Browser
-(global-set-key (kbd "C-c C-f") `treemacs)
+(global-set-key (kbd "C-c f") `treemacs)
 
 ;; Git shortcuts
-(global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-x C-g") 'magit-commit)
-
 (quelpa
  '(quelpa-use-package
    :fetcher git
