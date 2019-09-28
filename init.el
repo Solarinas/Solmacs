@@ -28,7 +28,7 @@
      ("\\?\\?\\?+" . "#F6D1AD"))))
  '(package-selected-packages
    (quote
-    (which-key magit-keys quelpa-use-package elcord helm-dash auto-complete luarocks flymake-lua company-lua use-package picolisp-mode evil-nerd-commenter lua-mode lsp-sh powerline-evil powerline emojify org-bullets doom-modeline org-evil scheme-complete ewal-spacemacs-theme ewal-spacemacs-themes ewal-evil-cursors ewal doom-themes flycheck elpy ctags-update popup-imenu imenu-anywhere projectile imenus lsp-ui evil-magit magit dap-mode yasnippet lsp-treemacs treemacs-evil treemacs ido-vertical-mode ido-completing-read+ helm popup async company-quickhelp ## all-the-icons company-box company-lsp company lsp-python fzf minimap sublimity smex evil-collection lsp-mode evil xresources-theme)))
+    (dashboard-hackernews org-dashboard dashboard which-key magit-keys quelpa-use-package elcord helm-dash auto-complete luarocks flymake-lua company-lua use-package picolisp-mode evil-nerd-commenter lua-mode lsp-sh emojify org-bullets doom-modeline org-evil scheme-complete ewal-spacemacs-theme ewal-spacemacs-themes ewal-evil-cursors ewal doom-themes flycheck elpy ctags-update popup-imenu imenu-anywhere projectile imenus lsp-ui evil-magit magit dap-mode yasnippet lsp-treemacs treemacs-evil treemacs ido-vertical-mode ido-completing-read+ helm popup async company-quickhelp ## all-the-icons company-box company-lsp company lsp-python fzf minimap sublimity smex evil-collection lsp-mode evil xresources-theme)))
  '(pdf-view-midnight-colors (quote ("#f6f2e2" . "#121319"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -63,6 +63,17 @@ There are two things you can do about this warning:
    :fetcher git
    :url "https://framagit.org/steckerhalter/quelpa-use-package.git"))
 (require 'quelpa-use-package)
+
+;; Dashboard
+(require 'dashboard)
+(dashboard-setup-startup-hook)
+;; Or if you use use-package
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
+(setq dashboard-startup-banner "~/GabEmacs2.png" )
+(setq dashboard-banner-logo-title "POWER ARMOR IS FOR PUSSIES")
 
 ;; ido-mode
 (ido-mode 1)
